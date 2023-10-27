@@ -5,10 +5,46 @@ import App from './App';
 import { BuyProvider } from './contexts/BuyContext';
 import reportWebVitals from './reportWebVitals';
 
+import { BrowserRouter,
+   RouterProvider,
+  createBrowserRouter 
+} from 'react-router-dom';
+import Protegido from './pages/Protegido';
+
+function Contact (){
+  return(
+    <h1> Contacttos </h1>
+  )
+}
+
+function ProductsItem (props){
+  
+  return(
+    <h1> Mostrando el producto ...</h1>
+  )
+}
+
+const router = createBrowserRouter([
+  {
+    path: "/contact",
+    element: <Contact/>,
+  },
+  {
+    path: "/protegido",
+    element: <Protegido/>,
+  },
+  {
+    path: "/p",
+    element: <ProductsItem/>,
+  },
+]);
+
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BuyProvider>
-    <App />
+    <RouterProvider router={router} />
+    {/* <App /> */}
   </BuyProvider>
 );
 
