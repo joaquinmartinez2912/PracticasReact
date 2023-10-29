@@ -1,10 +1,10 @@
 import { useContext, useEffect } from "react";
-import { BuyContext } from "../contexts/BuyContext";
+//import { BuyContext } from "../contexts/BuyContext";
 import { ModeContext } from "../contexts/ModeContext"; 
 
 const BuyTicket = (props) => {
     const modeContext = useContext(ModeContext);
-    const {Tema,finished, seconds,start,stop, handleTema} = modeContext; //Destructura aca porque es el contexte que recibe el objeto creado por el hook que es pasado como value en context.proveider
+    const {finished, seconds,start,stop} = modeContext; //Destructura aca porque es el contexte que recibe el objeto creado por el hook que es pasado como value en context.proveider
 
     useEffect(()=>{
         start() // Esta parte se ejecuta cuando se monta el componente.

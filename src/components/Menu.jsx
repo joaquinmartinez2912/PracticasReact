@@ -2,10 +2,19 @@ import { Link } from "react-router-dom";
 
 export default function Menu(){
     return(
-        <>
-        <button>
-            <Link> Contacto </Link>
-        </button>
-        </>
+        <div>
+            <button>
+                <Link to="/"> Home </Link>
+            </button>
+            <button>
+                <Link to="/compras"> Compras </Link>
+            </button>
+            <button>
+                <Link to="/productos"> Productos </Link>
+            </button>
+            <button>
+                <Link to="/listado"> ListaAPI </Link>
+            </button>
+        </div>
     )
 }

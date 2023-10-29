@@ -1,16 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+// import App from './App';
 //import { BuyProvider } from './contexts/BuyContext';
 import { ModeProvider } from './contexts/ModeContext';
 import reportWebVitals from './reportWebVitals';
+import Home from './pages/Home';
+import Compras from './pages/Compras';
+import Productos from './pages/Productos';
+import Producto from './pages/Producto';
+import Listado from './pages/Listado';
 
-// import { BrowserRouter,
-//    RouterProvider,
-//   createBrowserRouter 
-// } from 'react-router-dom';
-// import Protegido from './pages/Protegido';
+import {
+  // BrowserRouter,
+   RouterProvider,
+  createBrowserRouter 
+} from 'react-router-dom';
+
+//import Protegido from './pages/Protegido';
 
 // function Contact (){
 //   return(
@@ -25,26 +32,38 @@ import reportWebVitals from './reportWebVitals';
 //   )
 // }
 
-// const router = createBrowserRouter([
-//   {
-//     path: "/contact",
-//     element: <Contact/>,
-//   },
-//   {
-//     path: "/protegido",
-//     element: <Protegido/>,
-//   },
-//   {
-//     path: "/p",
-//     element: <ProductsItem/>,
-//   },
-// ]);
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home/>
+  },
+  {
+    path: "/compras",
+    element: <Compras/>
+  },
+  {
+    path: "/productos",
+    element: <Productos />,
+  },  
+  {
+    path: "/productos/:productId",
+    element: <Producto />,
+  },
+  {
+    path: "/listado",
+    element: <Listado />,
+  },
+    
+]);
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <ModeProvider>
-    <App />
+    <React.StrictMode> 
+      <RouterProvider router={router} />
+       {/* <App /> */}
+    </React.StrictMode> 
   </ModeProvider>
 );
 

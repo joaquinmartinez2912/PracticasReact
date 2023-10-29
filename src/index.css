@@ -10,9 +10,9 @@ body {
 .dark {
   margin: 0;
   padding: 0;
-  height: 1000px;
   background-color: #fff;
   filter: invert(1);
+  
 }
 
 h1,h2,h3{
