@@ -11,6 +11,7 @@ import Productos from './pages/Productos';
 import Producto from './pages/Producto';
 import Listado from './pages/Listado';
 import Protected from './pages/Protected';
+import Logeo from './pages/Logeo';
 
 import {
   // BrowserRouter,
@@ -36,6 +37,10 @@ import {
 const router = createBrowserRouter([
   {
     path: "/",
+    element: <Logeo/>
+  },
+  {
+    path: "/home",
     element: <Home/>
   },
   {

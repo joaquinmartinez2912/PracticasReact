@@ -4,7 +4,7 @@ export default function Menu(){
     return(
         <div>
             <button>
-                <Link to="/"> Home </Link>
+                <Link to="/home"> Home </Link>
             </button>
             <button>
                 <Link to="/compras"> Compras </Link>
