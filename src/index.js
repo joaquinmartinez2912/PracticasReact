@@ -10,6 +10,7 @@ import Compras from './pages/Compras';
 import Productos from './pages/Productos';
 import Producto from './pages/Producto';
 import Listado from './pages/Listado';
+import Protected from './pages/Protected';
 
 import {
   // BrowserRouter,
@@ -53,7 +54,10 @@ const router = createBrowserRouter([
     path: "/listado",
     element: <Listado />,
   },
-    
+  {
+    path: "/protegido",
+    element: <Protected />,
+  },
 ]);
 
 

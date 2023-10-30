@@ -15,6 +15,9 @@ export default function Menu(){
             <button>
                 <Link to="/listado"> ListaAPI </Link>
             </button>
+            <button>
+                <Link to="/protegido"> Protegido </Link>
+            </button>
         </div>
     )
 }
