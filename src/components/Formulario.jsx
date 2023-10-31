@@ -20,22 +20,32 @@ export default function Formulario() {
     }
 
     return (
-        <section>
-            <h1>Login</h1>
-            <form onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    value={nombre}
-                    onChange={e => setNombre(e.target.value)}
-                />
-                <input
-                    type="password"
-                    value={contrase}
-                    onChange={e => setContrase(e.target.value)}
-                />
-                <button>Iniciar Sesión</button>
-            </form>
-            {error && <p>Usuario y/o contraseña incorrectos</p>}
-        </section>
+        <section className="container mt-5"> {/* Aplica un margen en la parte superior */}
+        <h1 className="mb-4">Login</h1> {/* Aplica un margen inferior */}
+        <form onSubmit={handleSubmit}>
+          <div className="mb-3">
+            <label htmlFor="nombre" className="form-label">Nombre de usuario</label>
+            <input
+              type="text"
+              className="form-control"
+              id="nombre"
+              value={nombre}
+              onChange={(e) => setNombre(e.target.value)}
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="contrase" className="form-label">Contraseña</label>
+            <input
+              type="password"
+              className="form-control"
+              id="contrase"
+              value={contrase}
+              onChange={(e) => setContrase(e.target.value)}
+            />
+          </div>
+          <button type="submit" className="btn btn-primary" style={{justifyContent:"center"}}>Iniciar Sesión</button> {/* Usa una clase de Bootstrap para estilizar el botón */}
+        </form>
+        {error && <p className="mt-3 text-danger">Usuario y/o contraseña incorrectos</p>} {/* Aplica un margen superior y un estilo de texto de error */}
+      </section>
     );
 }
