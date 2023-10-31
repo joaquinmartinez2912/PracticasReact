@@ -20,21 +20,6 @@ import {
   createBrowserRouter 
 } from 'react-router-dom';
 
-//import Protegido from './pages/Protegido';
-
-// function Contact (){
-//   return(
-//     <h1> Contacttos </h1>
-//   )
-// }
-
-// function ProductsItem (props){
-  
-//   return(
-//     <h1> Mostrando el producto ...</h1>
-//   )
-// }
-
 const router = createBrowserRouter([
   {
     path: "/",

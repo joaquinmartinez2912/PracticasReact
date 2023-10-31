@@ -3,34 +3,32 @@ import { useContext} from 'react';
 import { ModeContext } from "../contexts/ModeContext";
 
 export default function LMain({ children }) {
-    const {Tema,handleTema} = useContext(ModeContext)
+    const {Tema} = useContext(ModeContext)
     return (
         <div
          className={Tema} 
-         style={{
-            width: '100%',
-            maxWidth: "100%",
-            height: "20000px",
-            // maxHeight: "100%",
-            margin: '0 auto',
-            backgroundColor: '#ccc',
-            padding: 10,
-            borderRadius: 5,
-        }}>
+        style={{
+           height: "20000px",
+         }}
+        >
 
-            <nav style={{
+            {/* <nav style={{
                 marginBottom: 20,
                 display: 'flex',
-                justifyContent: 'center'
-            }}>
-                <input
+                justifyContent: 'space-between'
+            }}> */}
+                 <Menu />
+          
+                 
+                {/* <input
                     type="radio"
                     name="theme"
                     id="light-context"
                     onClick={handleTema}
                     value="light"
                 />
-                <label htmlFor="light-context">Claro</label>
+                <label htmlFor="light-context">Claro</label> */}
+{/* 
                 <input
                     type="radio"
                     name="theme"
@@ -38,9 +36,10 @@ export default function LMain({ children }) {
                     onClick={handleTema}
                     value="dark"
                 />
-                <label htmlFor="dark-context">Oscuro</label>
-                <Menu />
-            </nav>
+                <label htmlFor="dark-context">Oscuro</label> */}
+
+               
+            {/* </nav> */}
 
             <div>
                 {children}

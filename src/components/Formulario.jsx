@@ -1,10 +1,12 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom"; // Importa useNavigate
+import { useState, useContext} from "react";
+import { useNavigate} from "react-router-dom"; // Importa useNavigate
+import { ModeContext } from "../contexts/ModeContext";
 
 export default function Formulario() {
     const [nombre, setNombre] = useState("");
     const [contrase, setContrase] = useState("");
     const [error, setError] = useState(false);
+    const {setUser} = useContext(ModeContext)
 
     const navigate = useNavigate(); // Crea la función de navegación
 
@@ -13,15 +15,16 @@ export default function Formulario() {
 
         if (nombre === "usuario" || contrase === "demo") {
             setError(false);
-            navigate("/home"); 
+            navigate("/home");
+            setUser(nombre)
         } else {
             setError(true);
         }
     }
 
     return (
-        <section className="container mt-5"> {/* Aplica un margen en la parte superior */}
-        <h1 className="mb-4">Login</h1> {/* Aplica un margen inferior */}
+        <section className="container mt-5"> 
+        <h1 className="mb-4">Login</h1>
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
             <label htmlFor="nombre" className="form-label">Nombre de usuario</label>
@@ -43,9 +46,9 @@ export default function Formulario() {
               onChange={(e) => setContrase(e.target.value)}
             />
           </div>
-          <button type="submit" className="btn btn-primary" style={{justifyContent:"center"}}>Iniciar Sesión</button> {/* Usa una clase de Bootstrap para estilizar el botón */}
+          <button type="submit" className="btn btn-primary btn-lg" style={{justifyContent:"center"}}>Iniciar Sesión</button> 
         </form>
-        {error && <p className="mt-3 text-danger">Usuario y/o contraseña incorrectos</p>} {/* Aplica un margen superior y un estilo de texto de error */}
+        {error && <p className="mt-3 text-danger">Usuario y/o contraseña incorrectos</p>} 
       </section>
     );
 }
