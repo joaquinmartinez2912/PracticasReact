@@ -6,7 +6,7 @@ const TIME_EXPIRE_BUY = 10;
 
 
 export const ModeProvider = ({children})=>{
-    const [Tema, setTema] = useState("");
+    const [Tema, setTema] = useState("light");
     const [Modo, setModo] = useState(true)
     const {finished, seconds,start,stop} = useTimer(TIME_EXPIRE_BUY)
     const [user, setUser] = useState("")

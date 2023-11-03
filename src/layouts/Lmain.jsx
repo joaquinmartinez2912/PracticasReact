@@ -1,6 +1,7 @@
-import Menu from "../components/Menu";
+// import Menu from "../components/Menu";
 import { useContext} from 'react';
 import { ModeContext } from "../contexts/ModeContext";
+import ResponsiveAppBar from "../components/MenuM";
 
 export default function LMain({ children }) {
     const {Tema} = useContext(ModeContext)
@@ -11,7 +12,8 @@ export default function LMain({ children }) {
            height: "20000px",
          }}
         >
-                 <Menu />
+                 {/* <Menu /> */}
+                 <ResponsiveAppBar />
             <div>
                 {children}
             </div>
