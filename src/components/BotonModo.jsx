@@ -59,9 +59,9 @@ const {handleTema} = useContext(ModeContext)
   return (
     <FormGroup>
       <FormControlLabel
-        control={<MaterialUISwitch sx={{ m: 1 }} defaultChecked />} 
+        control={<MaterialUISwitch sx={{ m: 1 }} defaultChecked onChange={handleTema} />} 
         
-        onChange={handleTema}
+        
       />
     </FormGroup>
   );

@@ -10,9 +10,9 @@ body {
 .dark {
   margin: 0;
   padding: 0;
-  background-color: #fff;
-  filter: invert(1);
-  
+  background-color: black;
+  color: aliceblue;
+  /* filter: invert(1); */
 }
 
 h1,h2,h3{

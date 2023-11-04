@@ -17,7 +17,7 @@ import { Link } from 'react-router-dom';
 import CustomizedSwitches from './BotonModo';
     
 
-const pages = [{nombre: "Tareas", path: "/listado"},];
+const pages = [{nombre: "Tareas", path: "/listado"},{nombre: "Compras", path: "/compras"}];
 
 
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];

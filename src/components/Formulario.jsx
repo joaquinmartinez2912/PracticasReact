@@ -1,6 +1,7 @@
 import { useState, useContext} from "react";
 import { useNavigate} from "react-router-dom"; // Importa useNavigate
 import { ModeContext } from "../contexts/ModeContext";
+import Alert from '@mui/material/Alert';
 
 export default function Formulario() {
     const [nombre, setNombre] = useState("");
@@ -48,7 +49,7 @@ export default function Formulario() {
           </div>
           <button type="submit" className="btn btn-primary btn-lg" style={{justifyContent:"center"}}>Iniciar Sesión</button> 
         </form>
-        {error && <p className="mt-3 text-danger">Usuario y/o contraseña incorrectos</p>} 
+        {error && <Alert severity="error">Usuario y/o Contraseña incorrectos</Alert>} 
       </section>
     );
 }

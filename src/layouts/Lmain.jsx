@@ -6,15 +6,11 @@ import ResponsiveAppBar from "../components/MenuM";
 export default function LMain({ children }) {
     const {Tema} = useContext(ModeContext)
     return (
-        <div
-         className={Tema} 
-        style={{
+        <div>
+            <ResponsiveAppBar />
+            <div className={Tema} style={{
            height: "20000px",
-         }}
-        >
-                 {/* <Menu /> */}
-                 <ResponsiveAppBar />
-            <div>
+         }} >
                 {children}
             </div>
 

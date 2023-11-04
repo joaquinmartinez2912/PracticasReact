@@ -11,7 +11,7 @@ function App() {
 
   return (
     <div className={Tema} >
-        <input
+        {/* <input
         type="radio"
         name="theme"
         id="light-context"
@@ -26,7 +26,7 @@ function App() {
         onClick={handleTema}
         value="dark"
       />
-      <label htmlFor="dark-context">Oscuro</label>
+      <label htmlFor="dark-context">Oscuro</label> */}
 
 
       <h1> Aerolineas Internacional</h1><br />
