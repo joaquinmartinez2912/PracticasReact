@@ -7,7 +7,7 @@ import { ModeContext } from './contexts/ModeContext';
 function App() {
   const [buy, setBuy] = useState(false)
   // const {finished, seconds} = useContext(BuyContext)
-    const {Tema,finished, seconds,start,stop, handleTema} = useContext(ModeContext)
+    const {Tema,finished, seconds, handleTema} = useContext(ModeContext)
 
   return (
     <div className={Tema} >

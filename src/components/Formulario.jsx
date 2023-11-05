@@ -1,5 +1,5 @@
 import { useState, useContext} from "react";
-import { useNavigate} from "react-router-dom"; // Importa useNavigate
+import { useNavigate} from "react-router-dom"; 
 import { ModeContext } from "../contexts/ModeContext";
 import Alert from '@mui/material/Alert';
 
@@ -9,7 +9,7 @@ export default function Formulario() {
     const [error, setError] = useState(false);
     const {setUser} = useContext(ModeContext)
 
-    const navigate = useNavigate(); // Crea la función de navegación
+    const navigate = useNavigate(); 
 
     const handleSubmit = (e) => {
         e.preventDefault();

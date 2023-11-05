@@ -7,22 +7,23 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
+//import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import { Link } from 'react-router-dom';
-
 import CustomizedSwitches from './BotonModo';
-    
+import { useContext} from 'react';
+import { ModeContext } from "../contexts/ModeContext";   
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
-const pages = [{nombre: "Tareas", path: "/listado"},{nombre: "Compras", path: "/compras"}];
+const pages = [{nombre: "Tareas", path: "/listado"}];
 
-
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const settings = [{nombre: "Cerrar Sesion", path: "/protegido"}];
 
 function ResponsiveAppBar() {
+  const {user} = useContext(ModeContext)
  
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -47,10 +48,9 @@ function ResponsiveAppBar() {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
 
-            {/* Logo de pagina completa */}
           <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
           
-          <Link to="/home">
+          <Link to="/home" style={{textDecoration:"none"}}>
                 <Typography
                     variant="h6"
                     noWrap
@@ -100,7 +100,7 @@ function ResponsiveAppBar() {
               }}
             >
               {pages.map((page) => (
-                <Link to={page.path}>
+                <Link to={page.path} style={{textDecoration:"none"}} >
                     <MenuItem key={page.path} onClick={handleCloseNavMenu}>
                     <Typography textAlign="center">{page.nombre}</Typography>
                     </MenuItem>
@@ -108,6 +108,7 @@ function ResponsiveAppBar() {
               ))}
             </Menu>
           </Box>
+
           <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
           <Link to="/home">
             <Typography
@@ -145,13 +146,21 @@ function ResponsiveAppBar() {
             ))}
           </Box>
 
-
-
           <CustomizedSwitches/>
+          
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                <div style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  color: "white"
+                }}>
+                  <AccountCircleIcon/>
+                  <p style={{margin:"0px"}}>{user}</p>  
+                </div>
               </IconButton>
             </Tooltip>
             <Menu
@@ -170,16 +179,17 @@ function ResponsiveAppBar() {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
+              
               {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
+                <Link to={setting.path} style={{textDecoration: "none"}}>
+                <MenuItem key={setting.path} onClick={handleCloseUserMenu}>
+                  <Typography textAlign="center">{setting.nombre}</Typography>
                 </MenuItem>
+                </Link>
               ))}
             </Menu>
           </Box>
 
-
-          
         </Toolbar>
       </Container>
     </AppBar>

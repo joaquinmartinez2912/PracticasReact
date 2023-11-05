@@ -2,14 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import App from './App';
-//import { BuyProvider } from './contexts/BuyContext';
 import { ModeProvider } from './contexts/ModeContext';
 import reportWebVitals from './reportWebVitals';
 import Home from './pages/Home';
-import Compras from './pages/Compras';
-import Productos from './pages/Productos';
-import Producto from './pages/Producto';
 import Listado from './pages/Listado';
 import Protected from './pages/Protected';
 import Logeo from './pages/Logeo';
@@ -30,18 +25,6 @@ const router = createBrowserRouter([
     element: <Home/>
   },
   {
-    path: "/compras",
-    element: <Compras/>
-  },
-  {
-    path: "/productos",
-    element: <Productos />,
-  },  
-  {
-    path: "/productos/:productId",
-    element: <Producto />,
-  },
-  {
     path: "/listado",
     element: <Listado />,
   },
@@ -57,7 +40,6 @@ root.render(
   <ModeProvider>
     <React.StrictMode> 
       <RouterProvider router={router} />
-       {/* <App /> */}
     </React.StrictMode> 
   </ModeProvider>
 );

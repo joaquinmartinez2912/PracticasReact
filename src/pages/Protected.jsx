@@ -4,12 +4,11 @@ import LMain from "../layouts/Lmain";
 
 export default function Protected(){
     const navigate = useNavigate()
-    var Token = false
+    
 
     useEffect(()=>{
-        if (Token===false)
         navigate("/")
-    },[navigate,Token])
+    },[navigate])
 
     return(
      <LMain>
