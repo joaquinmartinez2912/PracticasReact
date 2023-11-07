@@ -6,7 +6,7 @@ export const ModeProvider = ({children})=>{
     const [Tema, setTema] = useState("light");
     const [Modo, setModo] = useState(true)
     const [user, setUser] = useState("")
-    const [TotalPorPagina, setTotalPorPagina] = useState(10)
+    const [TotalPorPagina, setTotalPorPagina] = useState(5)
 
     const handleTema = (e) => {
       setModo(!Modo)
