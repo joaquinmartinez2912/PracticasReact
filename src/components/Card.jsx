@@ -8,7 +8,7 @@ export default function BasicCard({data}) {
     const {id, title, completed} = data  
   
     return (
-    <Card style={{margin: "10px", maxWidth:"20px"}} sx={{ minWidth: 275 }}  >
+    <Card style={{margin: "25px", maxWidth:"20px", height:"200px", backgroundColor:"#62D5FA"}} sx={{ minWidth: 275 }}  >
       <CardContent >
         <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
           {id}

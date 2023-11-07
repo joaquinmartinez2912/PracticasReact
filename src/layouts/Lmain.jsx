@@ -9,7 +9,7 @@ export default function LMain({ children }) {
         <div>
             <ResponsiveAppBar />
             <div className={Tema} style={{
-           height: "2500px",
+           height: "15000px",
          }} >
                 {children}
             </div>

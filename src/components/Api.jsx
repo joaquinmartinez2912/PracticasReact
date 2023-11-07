@@ -34,12 +34,12 @@ function TodoList() {
   }
 
   return (
-    <div>
+    <div style={{display:"flex",flexDirection: "column", alignItems: "center", alignContent:"center" ,justifyContent: "center"}}>
       <h4>Lista de Tareas</h4>
         <div style={{
           display: "flex", 
           flexDirection:"row", flexWrap:"wrap", 
-          justifyContent:"space-evenly",
+          justifyContent: "start",
           }} >
           
           {TareasAMostrar.map((todo) => (
@@ -49,7 +49,7 @@ function TodoList() {
               </div>
           
           ))}
-
+        </div>
         <div style={{display:"flex", flexDirection:"row"}}>
           <BasicSelect/>
           <Stack style={{marginLeft: "15px"}}>
@@ -58,11 +58,7 @@ function TodoList() {
             <div >
               <Pagination style={{filter: Modo ? "none" : "invert(1)"}} count={BotonPaginas.length} page={PaginaActual} onChange={handleChange} />
             </div>
-            
           </Stack>
-        </div>
-
-
         </div>
     </div>
   );

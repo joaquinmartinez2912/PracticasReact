@@ -14,7 +14,7 @@ export default function Formulario() {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        if (nombre === "usuario" || contrase === "demo") {
+        if (nombre === "usuario" && contrase === "demo") {
             setError(false);
             navigate("/home");
             setUser(nombre)
