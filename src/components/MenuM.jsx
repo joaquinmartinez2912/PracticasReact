@@ -18,7 +18,7 @@ import { useContext} from 'react';
 import { ModeContext } from "../contexts/ModeContext";   
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
-const pages = [{nombre: "Tareas", path: "/listado"}];
+const pages = [{nombre: "Tareas", path: "/listado"},{nombre: "Contacto", path: "/contacto"}];
 
 const settings = [{nombre: "Cerrar Sesion", path: "/protegido"}];
 
@@ -44,7 +44,7 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
 

@@ -8,12 +8,14 @@ import Home from './pages/Home';
 import Listado from './pages/Listado';
 import Protected from './pages/Protected';
 import Logeo from './pages/Logeo';
+import Contacto from './pages/Contacto';
 
 import {
   // BrowserRouter,
    RouterProvider,
   createBrowserRouter 
 } from 'react-router-dom';
+
 
 const router = createBrowserRouter([
   {
@@ -31,6 +33,10 @@ const router = createBrowserRouter([
   {
     path: "/protegido",
     element: <Protected />,
+  },
+  {
+    path: "/contacto",
+    element: <Contacto />,
   },
 ]);
 
