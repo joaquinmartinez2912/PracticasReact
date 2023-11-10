@@ -16,7 +16,7 @@ export default function BasicSelect() {
   };
 
   return (
-    <Box sx={{ minWidth: 120 }} style={{filter: Modo ? "none" : "invert(1)"}}>
+    <Box sx={{ minWidth: 120 }} style={{filter: Modo ? "none" : "invert(1)" }}>
       <FormControl fullWidth>
         <InputLabel id="demo-simple-select-label">Cant</InputLabel>
         <Select

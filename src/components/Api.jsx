@@ -35,7 +35,11 @@ function TodoList() {
 
   return (
     <div style={{display:"flex",flexDirection: "column", alignItems: "center", alignContent:"center" ,justifyContent: "center"}}>
-      <h4>Lista de Tareas</h4>
+      <div style={{display:"flex", flexDirection: "row", justifyContent: "space-between", paddingTop:"10px", width:"100%" }}>
+        <h4>Lista de Tareas</h4>
+        <BasicSelect />
+      </div>
+      
         <div style={{
           display: "flex", 
           flexDirection:"row", flexWrap:"wrap", 
@@ -51,7 +55,7 @@ function TodoList() {
           ))}
         </div>
         <div style={{display:"flex", flexDirection:"row"}}>
-          <BasicSelect/>
+          
           <Stack style={{marginLeft: "15px"}}>
             <Typography>Pagina: {PaginaActual}</Typography>
             
